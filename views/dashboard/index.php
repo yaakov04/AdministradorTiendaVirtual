@@ -1,4 +1,5 @@
 <?php require 'views/header.php';?>
+<?php require 'views/aside.php';?>
 <main class="main_container__main">
 
     <div class="card card--width--all">
@@ -134,4 +135,4 @@
 
 
 </main><!--main_container__main-->
-<?php require 'views/header.php';?>
+<?php require 'views/footer.php';?>

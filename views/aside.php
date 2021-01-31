@@ -11,7 +11,7 @@
     <nav class="navegacion">
         <ul>
             <li>
-                <a class="navegacion__enlace" data-link="true" href="index.html">Resumen<i class="fas fa-angle-left"></i></a>
+                <a class="navegacion__enlace" data-link="true" href="<?php echo URL ?>dashboard">Resumen<i class="fas fa-angle-left"></i></a>
 
             </li>
             <li><a href="#" class="navegacion__enlace" data-menu="true">Ventas<i class="fas fa-angle-left navegacion__enlace-icon"></i></a>
