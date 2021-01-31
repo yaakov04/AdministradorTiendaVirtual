@@ -6,7 +6,10 @@ class App{
         $url =explode('/', $url);
         
         if (empty($url[0])) {
-            echo 'este es la pagina de inicio';
+            $archivoControlador= 'controllers/dashboard.php';
+            require $archivoControlador;
+            $controlador = new Dashboard();
+            $controlador->render();
             return false;
         }
         
