@@ -7,11 +7,23 @@ class App{
         
         if (empty($url[0])) {
             $archivoControlador= 'controllers/dashboard.php';
-            require $archivoControlador;
+            require_once $archivoControlador;
             $controlador = new Dashboard();
             $controlador->render();
             return false;
         }
+        $archivoControlador='controllers/'.$url[0].'.php';
+        if (file_exists($archivoControlador)) {
+            require_once $archivoControlador;
+            $controlador= new $url[0];
+            //$controlador->render();
+            if (isset($url[1])) {
+                $controlador->{$url[1]}();
+            }else{
+                $controlador->render();
+            }
+        }
+
         
 
 
