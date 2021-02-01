@@ -17,11 +17,25 @@ class App{
             require_once $archivoControlador;
             $controlador= new $url[0];
             //$controlador->render();
-            if (isset($url[1])) {
-                $controlador->{$url[1]}();
+            $nparam=sizeof($url);
+            if ($nparam>1) {
+                if ($nparam>2) {
+                    $param=array();
+                    for($i=2;$i<$nparam;$i++){
+                        array_push($param, $url[$i]);
+                    }
+                    $controlador->{$url[1]}($param);
+                }else{
+                    $controlador->{$url[1]}();
+                }
             }else{
                 $controlador->render();
             }
+            // if (isset($url[1])) {
+            //     $controlador->{$url[1]}();
+            // }else{
+            //     $controlador->render();
+            // }
         }
 
         

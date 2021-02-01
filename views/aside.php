@@ -3,8 +3,8 @@
         <img class="admin_profile__img" src="img/user.png" alt="imagen de perfil">
         <p class="admin_profile__nombre">Juanito Banobacoa</p>
         <div>
-            <a href="perfil.html" class="admin_profile__accion"><i class="fas fa-user"></i></a>
-            <a href="buzon.html" class="admin_profile__accion"><i class="fas fa-envelope"></i></a>
+            <a href="<?php echo URL ?>perfil" class="admin_profile__accion"><i class="fas fa-user"></i></a>
+            <a href="<?php echo URL ?>buzon" class="admin_profile__accion"><i class="fas fa-envelope"></i></a>
             <a href="#" class="admin_profile__accion"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
