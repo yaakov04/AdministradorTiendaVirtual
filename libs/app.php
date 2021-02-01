@@ -9,6 +9,7 @@ class App{
             $archivoControlador= 'controllers/dashboard.php';
             require_once $archivoControlador;
             $controlador = new Dashboard();
+            $controlador->loadModel('dashboard');
             $controlador->render();
             return false;
         }
@@ -16,6 +17,7 @@ class App{
         if (file_exists($archivoControlador)) {
             require_once $archivoControlador;
             $controlador= new $url[0];
+            $controlador->loadModel($url[0]);
             //$controlador->render();
             $nparam=sizeof($url);
             if ($nparam>1) {
