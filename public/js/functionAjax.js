@@ -11,6 +11,14 @@ function peticionAjax(controller, metodo, datos) {
                 console.log(respuesta);
 
                 if (respuesta.respuesta == 'exito') {
+                    switch (respuesta.tipo) {
+                        case "registrarProducto":
+                            exitoRegistrarProducto(respuesta.mensaje);
+                            break;
+
+                        default:
+                            break;
+                    }
 
                 } else {
                     //Error
@@ -26,4 +34,18 @@ function peticionAjax(controller, metodo, datos) {
     xhr.send(datos);
 
 
+}
+
+function exitoRegistrarProducto(mensaje) {
+    notificacionCorrecto(mensaje, 100, 800);
+    let formulario = document.querySelector('.form');
+    let inputs = Array.prototype.slice.call(formulario.querySelectorAll('input'));
+    let selects = Array.prototype.slice.call(formulario.querySelectorAll('select'));
+    let textAreas = Array.prototype.slice.call(formulario.querySelectorAll('textarea'));
+    inputs = inputs.concat(selects);
+    inputs = inputs.concat(textAreas);
+    //console.log(inputs);
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = '';
+    }
 }
