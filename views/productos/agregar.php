@@ -56,7 +56,7 @@
 
                     </div>
                 </fieldset>
-                <button id="submit" type="submit" class="form__submit ">Agregar Producto</button>
+                <button id="agregar-producto" type="submit" class="form__submit ">Agregar Producto</button>
             </form>
         </div>
         <footer>

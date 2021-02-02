@@ -17,5 +17,8 @@ class productosModel extends Model{
         }catch (Exception $e) {
             echo 'error:' . $e;
         }
+    }//
+    public function insertarDB(){
+        return 'model';
     }
 }

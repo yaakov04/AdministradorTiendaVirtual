@@ -14,4 +14,8 @@ class Productos extends Controller{
     function agregar(){
         $this->view->render('productos/agregar');
     }
+    function insertar(){
+        //$consultaDB=$this->model->insertarDB();
+        die(json_encode($_POST));
+    }
 }
