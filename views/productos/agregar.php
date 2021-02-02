@@ -27,9 +27,9 @@
                             <label for="categoria" class="form__label">Seleccione la categoría:</label>
                             <select name="categoria" id="categoria" class="form__input form__input-width-all">
                                 <option  value="" selected disabled>Seleccione una opcion</option>
-                                <option  value="1">Electronicos</option>
-                                <option  value="1">Electronicos</option>
-                                <option  value="1">Electronicos</option>
+                                <?php foreach ($this->categorias as $categoria) {?>
+                                    <option  value="<?php echo $categoria['id'] ?>"><?php echo $categoria['categoria'] ?></option>
+                                <?php }//foreach ?>
                             </select>
                         </div>
                         <div>

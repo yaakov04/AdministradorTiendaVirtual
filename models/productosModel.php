@@ -18,6 +18,17 @@ class productosModel extends Model{
             echo 'error:' . $e;
         }
     }//
+    public function getCategorias(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql= " SELECT id, categoria FROM categorias  ";
+            $resultado = $conexion->query($sql);
+            return $resultado;
+            $this->db->cerrarConexion($conexion);
+        }catch (Exception $e) {
+            echo 'error:' . $e;
+        }
+    }//
     public function insertarDB(){
         return 'model';
     }
