@@ -27,7 +27,7 @@
                     </div>
 
                 </fieldset>
-                <button id="submit" type="submit" class="form__submit ">Agregar categoria</button>
+                <button id="agregar-categoria" type="submit" class="form__submit ">Agregar categoria</button>
             </form>
         </div>
         <footer>

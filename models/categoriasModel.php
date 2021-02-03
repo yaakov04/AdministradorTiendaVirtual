@@ -13,5 +13,27 @@ class categoriasModel extends Model{
         }catch (Exception $e) {
             echo 'error:' . $e;
         }
-    }
+    }//
+    public function insertarDB($datos){
+        $categoria=$datos['nombre'];
+        $nombre_categoria=$datos['codigo'];
+        try{
+            $conexion=$this->db->conexion();
+            $stmt = $conexion->prepare(" INSERT INTO categorias (categoria, nombre_categoria) VALUES (?, ?) ");
+            $stmt->bind_param("ss", $categoria, $nombre_categoria);
+            $stmt->execute();
+            
+            if($stmt->affected_rows > 0){
+                $respuesta='exito';
+            }else{
+                $respuesta='error';
+            }
+            $stmt->close();
+            $conexion->close();
+        }catch (Exception $e) {
+            echo 'error:' . $e;
+            $respuesta='error:' . $e;
+        }
+        return $respuesta;
+    }//
 }

@@ -1,11 +1,14 @@
 (function() {
     document.addEventListener('DOMContentLoaded', function() {
         const btnAgregarProducto = document.querySelector('#agregar-producto') || null;
+        const btnAgregarCategoria = document.querySelector('#agregar-categoria') || null;
 
         if (btnAgregarProducto) {
             btnAgregarProducto.addEventListener('click', agregarProducto);
         }
-
+        if (btnAgregarCategoria) {
+            btnAgregarCategoria.addEventListener('click', agregarCategoria);
+        }
 
 
         function agregarProducto(e) {
@@ -24,6 +27,21 @@
             }
 
         } //
+        function agregarCategoria(e) {
+            e.preventDefault();
+            if (camposVaciosForm(btnAgregarCategoria)) {
+                alert('campos vacios')
+            } else {
+                let valores = obtenerValoresForm(btnAgregarCategoria);
+                let datos = insertandoDatosFormData(valores);
+                obteniendoDatosTextarea(datos);
+                detectandoFiles(datos);
+                //console.log(...datos);
+                let controller = 'categorias';
+                let metodo = 'insertar';
+                peticionAjax(controller, metodo, datos);
+            }
+        }
 
         //crea el formdata de los valores obtenidos de un formulario para el ajax
         function insertandoDatosFormData(valores) {

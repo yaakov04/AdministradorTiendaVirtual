@@ -14,4 +14,21 @@ class Categorias extends Controller{
     function agregar(){
         $this->view->render('categorias/agregar');
     }
+
+    function insertar(){
+        if ($_POST['nombre']==''||$_POST['codigo']=='') {
+            $respuesta=$respuesta=array(
+                'respuesta'=>'error',
+                'mensaje'=>'campos vacios'
+            );
+        }else{
+            $consultaDB=$this->model->insertarDB($_POST);
+            $respuesta=array(
+                'respuesta'=>$consultaDB,
+                'tipo'=>'registrarCategoria',
+                'mensaje'=>'Categoria agregada correctamente'
+            );
+        }
+        die(json_encode($respuesta));
+    }
 }

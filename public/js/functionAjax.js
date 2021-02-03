@@ -15,7 +15,9 @@ function peticionAjax(controller, metodo, datos) {
                         case "registrarProducto":
                             exitoRegistrarProducto(respuesta.mensaje);
                             break;
-
+                        case "registrarCategoria":
+                            exitoRegistrarProducto(respuesta.mensaje);
+                            break
                         default:
                             break;
                     }
