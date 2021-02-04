@@ -9,16 +9,17 @@ class loginModel extends Model{
 
         try{
         $conexion=$this->db->conexion();
-        $stmt = $conexion->prepare(" SELECT id, usuario, password FROM admins WHERE usuario = ? ");
+        $stmt = $conexion->prepare(" SELECT id, usuario, nombre, password FROM admins WHERE usuario = ? ");
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
-        $stmt->bind_result($result_id, $result_usuario, $result_password);
+        $stmt->bind_result($result_id, $result_usuario, $result_nombre, $result_password);
         $usuario_existe= $stmt->fetch();
 
         if ($usuario_existe) {
             if (password_verify($password, $result_password)) {
                 //inicia sesion
                 $_SESSION['id']=$result_id;
+                $_SESSION['nombre']=$result_nombre;
                 $_SESSION['usuario']=$result_usuario;
                 $_SESSION['login']=true;
                 $respuesta='exito';
