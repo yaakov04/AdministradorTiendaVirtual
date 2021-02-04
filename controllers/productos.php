@@ -2,6 +2,7 @@
 class Productos extends Controller{
     function __construct(){
         parent::__construct();
+        require_once 'config/sessions.php';
         $this->view->productos=array();
         $this->view->categorias=array();
     }

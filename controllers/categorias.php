@@ -2,6 +2,7 @@
 class Categorias extends Controller{
     function __construct(){
         parent::__construct();
+        require_once 'config/sessions.php';
         $this->view->categorias=array();
     }
     function render(){

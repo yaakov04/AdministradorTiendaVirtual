@@ -2,6 +2,17 @@
 class Login extends Controller{
     function __construct(){
         parent::__construct();
+        if (isset($_GET['sesion'])) {
+            if ($_GET['sesion']=='finalizada') {
+                $_SESSION = array();
+            }
+        }
+
+        if (isset($_SESSION['login'])) {
+            if ($_SESSION['login']=true) {
+                header('Location:'. URL.'dashboard');
+            }
+        }
     }
     function render(){
         $this->view->render('login/index');
