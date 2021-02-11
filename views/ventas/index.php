@@ -31,20 +31,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="detalles-venta.html">123456789</a></td>
-                        <td>No pagado</td>
-                        <td>Diego04</td>
-                        <td>04/05/2020</td>
-                        <td style="max-width: 3rem;
-                        overflow: hidden;
-                        text-overflow: ellipsis;">{"2":{"id":"2","nombre":"Mochila","precio":"200.00","img":"mochila.jpg","cantidad":2},"6":{"id":"6","nombre":"Soporte para pendientes","precio":"400.00","img":"soporte_pendientes.png","cantidad":1}}</td>
-                        <td style="max-width: 3rem;text-overflow: ellipsis;">Baker Street 221-B, Londres, Inlgaterra, cp: 1200</td>
-                        <td>$800.00</td>
-                    </tr>
-
-
-
+                    <?php foreach ($this->ventas as $venta) {?>
+                        <tr>
+                            <td><a href="detalles-venta.html"><?php echo $venta['id_venta'] ?></a></td>
+                            <td><?php echo $venta['estatus'] ?></td>
+                            <td><?php echo $venta['comprador'] ?></td>
+                            <td><?php echo $venta['fecha_venta'] ?></td>
+                            <td style="max-width: 3rem;overflow: hidden;text-overflow: ellipsis;">
+                            <?php
+                            foreach ($venta['detalles_pedido']as $detalles_pedido) {
+                                echo '<i class="fas fa-shopping-bag"></i> '.$detalles_pedido['nombre_producto'].' X'.$detalles_pedido['cantidad_producto'].' '.$detalles_pedido['precio_producto'].'<br>';
+                            }
+                            ?>
+                            </td>
+                            <td style="max-width: 3rem;text-overflow: ellipsis;"><?php echo $venta['datos_envio'] ?></td>
+                            <td><?php echo $venta['total'] ?></td>
+                        </tr>
+                    <?php  } ?>
+                    
                 </tbody>
                 <tfoot>
                     <tr>
