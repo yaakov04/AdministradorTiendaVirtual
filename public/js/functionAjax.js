@@ -1,4 +1,4 @@
-function peticionAjax(controller, metodo, datos) {
+function peticionAjax(controller, metodo, datos = null) {
     //peticion ajax
     const xhr = new XMLHttpRequest();
 
@@ -18,6 +18,7 @@ function peticionAjax(controller, metodo, datos) {
                         case "registrarCategoria":
                             exitoRegistrarProducto(respuesta.mensaje);
                             break
+
                         default:
                             break;
                     }
