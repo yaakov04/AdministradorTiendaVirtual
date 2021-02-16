@@ -5,6 +5,9 @@ class Dashboard extends Controller{
         require_once 'config/sessions.php';
     }
     function render(){
+        $consultaDB=$this->model->getNEnviosPendientes();
+        $resultado=$consultaDB->fetch_assoc();
+        $this->view->envios_pendientes=$resultado['numero_envios_pendientes'];
         $this->view->render('dashboard/index');
     }//
     function enviosPendientes(){

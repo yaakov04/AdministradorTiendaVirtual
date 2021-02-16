@@ -11,7 +11,7 @@
                 <div class="boxInfo__content">
                     <div>
                         <p class="boxInfo__txt">Envíos pendientes:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">1</p>
+                        <p class="boxInfo__txt boxInfo__txt-number"><?php echo $this->envios_pendientes;?></p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-shipping-fast"></i></i>
                         </i>

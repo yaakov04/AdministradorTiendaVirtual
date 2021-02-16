@@ -3,6 +3,18 @@ class dashboardModel extends Model{
     public function __parent(){
         parent::__parent();
     }//
+    public function getNEnviosPendientes(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql=" SELECT COUNT(*) AS numero_envios_pendientes FROM ventas WHERE estatus = 2 ";
+        
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
+    }//
     public function getEnviosPendientes(){
         try{
             $conexion=$this->db->conexion();
