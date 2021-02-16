@@ -49,6 +49,7 @@ class Dashboard extends Controller{
             }
             
         }//while
+        //
         $this->view->ventas=$ventas;
         $this->view->render('dashboard/enviosPendientes');
     }
