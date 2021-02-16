@@ -5,7 +5,7 @@
     <script src="<?php echo URL ?>public/js/Modal.js"></script>
     <script src="<?php echo URL ?>public/js/notificaciones.js"></script>
     <script src=" <?php echo URL ?>public/js/functionAjax.js "></script>
-    <script src=" <?php echo URL ?>public/js/graficas.js "></script>
+    <script src=" <?php echo URL ?>public/js/servicios.js "></script>
     <script src=" <?php echo URL ?>public/js/ajax.js "></script>
     <script src=" <?php echo URL ?>public/js/app.js "></script>
 

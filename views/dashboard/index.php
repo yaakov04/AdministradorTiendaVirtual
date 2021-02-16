@@ -17,7 +17,7 @@
                         </i>
                     </div>
                 </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
+                <footer><a href="<?php echo URL .'dashboard/enviosPendientes' ?>" class="boxInfo__footer">Más información</a></footer>
             </div>
             <!--.boxInfo-->
 
