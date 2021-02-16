@@ -331,6 +331,10 @@ img {
     margin-bottom: 1rem;
 }
 
+.form__label--fontW-bold {
+    font-weight: bold;
+}
+
 .form__input {
     display: block;
     padding: 1rem;
@@ -508,6 +512,27 @@ img {
     border-radius: .3rem;
     display: inline-block;
     cursor: pointer;
+}
+
+
+/**Detalles de venta**/
+
+.detallesVenta__label {
+    font-weight: bold;
+}
+
+.pedidos__encabezado {
+    font-weight: bold;
+    margin: 0;
+}
+
+.pedidos__tabla {
+    margin-left: 3rem;
+    width: 25%;
+}
+
+.pedidos__campo--precio {
+    text-align: right;
 }
 
 

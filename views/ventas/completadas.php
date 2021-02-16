@@ -33,7 +33,7 @@
                 <tbody>
                 <?php foreach ($this->ventas as $venta) {?>
                     <tr>
-                        <td><a href="detalles-venta.html"><?php echo $venta['id_venta'] ?></a></td>
+                        <td><a href="<?php echo URL. 'ventas/detallesVentas/'. $venta['id_venta']?>"><?php echo $venta['id_venta'] ?></a></td>
                         <td><?php echo $venta['estatus'] ?></td>
                         <td><?php echo $venta['comprador'] ?></td>
                         <td><?php echo $venta['fecha_venta'] ?></td>
