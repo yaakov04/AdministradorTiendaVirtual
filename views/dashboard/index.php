@@ -67,7 +67,7 @@
                 <div class="boxInfo__content">
                     <div>
                         <p class="boxInfo__txt">Numero total de ventas:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">18</p>
+                        <p class="boxInfo__txt boxInfo__txt-number"><?php echo $this->nTotalVentas; ?></p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-shopping-bag"></i></div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="boxInfo__content">
                     <div>
                         <p class="boxInfo__txt">Ventas completadas:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">13</p>
+                        <p class="boxInfo__txt boxInfo__txt-number"><?php echo $this->nVentasCompletadas; ?></p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-check-square"></i></i>
                     </div>
@@ -92,7 +92,7 @@
                 <div class="boxInfo__content">
                     <div>
                         <p class="boxInfo__txt">Ventas pendientes:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">5</p>
+                        <p class="boxInfo__txt boxInfo__txt-number"><?php echo $this->nVentasPendientes; ?></p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-clock"></i></div>
                 </div>
@@ -104,7 +104,7 @@
                 <div class="boxInfo__content">
                     <div>
                         <p class="boxInfo__txt">Ganacias totales:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">$10,400.00</p>
+                        <p class="boxInfo__txt boxInfo__txt-number"><?php echo $this->gananciasTotales ?></p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-dollar-sign"></i></i>
                     </div>

@@ -15,6 +15,54 @@ class dashboardModel extends Model{
             return 'Error '. $e;
         }
     }//
+    public function getNVentasTotales(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql=" SELECT COUNT(*) AS numero_ventas_totales FROM ventas WHERE MONTH(fecha)= MONTH(CURRENT_DATE()) ";
+        
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
+    }//
+    public function getNVentasCompletadas(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql=" SELECT COUNT(*) AS numero_ventas_completadas FROM ventas WHERE MONTH(fecha)= MONTH(CURRENT_DATE()) AND estatus >= 2 ";
+        
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
+    }//
+    public function getNVentasPendientes(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql=" SELECT COUNT(*) AS numero_ventas_completadas FROM ventas WHERE MONTH(fecha)= MONTH(CURRENT_DATE()) AND estatus < 2 ";
+        
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
+    }//
+    public function getGananciasTotales(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql=" SELECT SUM(total) AS ganancias_totales FROM ventas WHERE estatus >= 2 AND MONTH(fecha)= MONTH(CURRENT_DATE()) ";
+        
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
+    }
     public function getEnviosPendientes(){
         try{
             $conexion=$this->db->conexion();

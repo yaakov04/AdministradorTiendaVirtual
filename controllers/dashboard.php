@@ -8,6 +8,20 @@ class Dashboard extends Controller{
         $consultaDB=$this->model->getNEnviosPendientes();
         $resultado=$consultaDB->fetch_assoc();
         $this->view->envios_pendientes=$resultado['numero_envios_pendientes'];
+        $consultaDB=$this->model->getNVentasTotales();
+        $resultado=$consultaDB->fetch_assoc();
+        $this->view->nTotalVentas=$resultado['numero_ventas_totales'];
+        $consultaDB=$this->model->getNVentasCompletadas();
+        $resultado=$consultaDB->fetch_assoc();
+        $this->view->nVentasCompletadas=$resultado['numero_ventas_completadas'];
+        $consultaDB=$this->model->getNVentasPendientes();
+        $resultado=$consultaDB->fetch_assoc();
+        $this->view->nVentasPendientes=$resultado['numero_ventas_completadas'];
+        $consultaDB=$this->model->getGananciasTotales();
+        $resultado=$consultaDB->fetch_assoc();
+        $moneda=new NumberFormatter( 'es_MX', NumberFormatter::CURRENCY );
+        $resultado=$moneda->formatCurrency($resultado['ganancias_totales'], 'MXN');
+        $this->view->gananciasTotales=$resultado;
         $this->view->render('dashboard/index');
     }//
     function enviosPendientes(){
