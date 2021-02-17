@@ -531,6 +531,10 @@ img {
     width: 30%;
 }
 
+.pedidos__campo {
+    min-width: 2.5rem;
+}
+
 .pedidos__campo--precio {
     text-align: right;
 }
