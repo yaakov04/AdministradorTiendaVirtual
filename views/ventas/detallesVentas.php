@@ -40,9 +40,9 @@
                     <div class="form__row">
                         <select name="actualizar_estatus" id="actualizar_estatus" class="form__input">
                             <option value="0" selected disabled>Seleccione una opción</option>
-                            <option value="1">Procesando Envio</option>
-                            <option value="1">Enviado</option>
-                            <option value="1">Entregado</option>
+                            <?php foreach($this->estatus as $estatus){ ?>
+                                <option value="<?php echo $estatus['id'] ?>"><?php echo $estatus['estado'] ;?></option>
+                            <?php }//foreach?>
                         </select>
                     </div>
                 </fieldset>

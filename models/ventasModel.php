@@ -65,4 +65,15 @@ class ventasModel extends Model{
             return 'Error '. $e;
         }
     }//
+    public function getEstados(){
+        try{
+            $conexion = $this->db->conexion();
+            $sql=" SELECT * FROM estados ";
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
+    }//
 }

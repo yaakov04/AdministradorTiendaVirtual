@@ -194,6 +194,12 @@ class Ventas extends Controller{
                 }
             }
             $this->view->ventas=$venta;
+            $consultaDB=$this->model->getEstados();
+            $this->view->estatus=array();
+            while ($resultado=$consultaDB->fetch_assoc()) {
+                array_push($this->view->estatus, $resultado);
+            }
+            var_dump($this->view->estatus);
             $this->view->render('ventas/detallesVentas');
         }else{
             die('No se encontro el recurso');
