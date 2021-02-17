@@ -71,7 +71,7 @@
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-shopping-bag"></i></div>
                 </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
+                <footer><a href="<?php echo URL.'ventas' ?>" class="boxInfo__footer">Más información</a></footer>
             </div>
             <!--.boxInfo-->
 
@@ -84,7 +84,7 @@
                     <div class="boxInfo__icon"><i class="fas fa-check-square"></i></i>
                     </div>
                 </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
+                <footer><a href="<?php echo URL.'ventas/completadas' ?>" class="boxInfo__footer">Más información</a></footer>
             </div>
             <!--.boxInfo-->
 
@@ -96,7 +96,7 @@
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-clock"></i></div>
                 </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
+                <footer><a href="<?php echo URL.'ventas/pendientes'?>" class="boxInfo__footer">Más información</a></footer>
             </div>
             <!--.boxInfo-->
 
@@ -109,7 +109,7 @@
                     <div class="boxInfo__icon"><i class="fas fa-dollar-sign"></i></i>
                     </div>
                 </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
+                <footer></footer>
             </div>
             <!--.boxInfo-->
 
