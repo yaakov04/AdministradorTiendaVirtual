@@ -16,10 +16,12 @@ class Ventas extends Controller{
                     //existe->no hagas nada
                 }else{
                     //existe->agrega pedido
+                    $precio =new NumberFormatter( 'es_MX', NumberFormatter::CURRENCY );
+                    $precio=$precio->formatCurrency((int)$resultado['precio_articulo'], 'MXN');
                     $ventas[$resultado['id_venta']]['detalles_pedido'][$resultado['id_pedido']]=array(
                         'nombre_producto' =>$resultado['nombre_producto'],
                         'cantidad_producto'=>$resultado['cantidad_articulo'],
-                        'precio_producto'=>$resultado['precio_articulo']
+                        'precio_producto'=>$precio
                     );
                 }
                 
@@ -61,10 +63,12 @@ class Ventas extends Controller{
                     //existe->no hagas nada
                 }else{
                     //existe->agrega pedido
+                    $precio =new NumberFormatter( 'es_MX', NumberFormatter::CURRENCY );
+                    $precio=$precio->formatCurrency((int)$resultado['precio_articulo'], 'MXN');
                     $ventas[$resultado['id_venta']]['detalles_pedido'][$resultado['id_pedido']]=array(
                         'nombre_producto' =>$resultado['nombre_producto'],
                         'cantidad_producto'=>$resultado['cantidad_articulo'],
-                        'precio_producto'=>$resultado['precio_articulo']
+                        'precio_producto'=>$precio
                     );
                 }
                 
@@ -106,10 +110,12 @@ class Ventas extends Controller{
                     //existe->no hagas nada
                 }else{
                     //existe->agrega pedido
+                    $precio =new NumberFormatter( 'es_MX', NumberFormatter::CURRENCY );
+                    $precio=$precio->formatCurrency((int)$resultado['precio_articulo'], 'MXN');
                     $ventas[$resultado['id_venta']]['detalles_pedido'][$resultado['id_pedido']]=array(
                         'nombre_producto' =>$resultado['nombre_producto'],
                         'cantidad_producto'=>$resultado['cantidad_articulo'],
-                        'precio_producto'=>$resultado['precio_articulo']
+                        'precio_producto'=>$precio
                     );
                 }
                 
@@ -154,10 +160,13 @@ class Ventas extends Controller{
                         //existe->no hagas nada
                     }else{
                         //existe->agrega pedido
+                        $precio =new NumberFormatter( 'es_MX', NumberFormatter::CURRENCY );
+                        $precio=$precio->formatCurrency((int)$resultado['precio_articulo'], 'MXN');
+
                         $venta[$resultado['id_venta']]['detalles_pedido'][$resultado['id_pedido']]=array(
                             'nombre_producto' =>$resultado['nombre_producto'],
                             'cantidad_producto'=>$resultado['cantidad_articulo'],
-                            'precio_producto'=>$resultado['precio_articulo']
+                            'precio_producto'=>$precio
                         );
                     }
                     

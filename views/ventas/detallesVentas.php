@@ -31,6 +31,7 @@
                         </table>
                     
                     </div>
+                    <p><span class="detallesVenta__label">Total:</span> <?php echo $venta['total'] ?></p>
                 </div>
             <?php }//foreach ?>
             <form class="form" action="">
