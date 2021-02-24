@@ -19,7 +19,29 @@ class Productos extends Controller{
             array_push($this->view->categorias, $resultado);
         }
         $this->view->render('productos/agregar');
-    }
+    }//
+    function editarProducto($param){
+        $id=$param[0];
+        $consultaDB=$this->model->getProducto($id);
+        $resultado=$consultaDB->fetch_assoc();
+        $this->view->producto=$resultado;
+        
+        if ($consultaDB->num_rows>0) {
+            $consultaDB= $this->model->getCategorias();
+            while($resultado=$consultaDB->fetch_assoc()){
+                array_push($this->view->categorias, $resultado);
+            }
+            // var_dump($this->view->producto);
+            // var_dump($this->view->categorias);
+            
+            
+
+            $this->view->render('productos/editarProducto');
+        }else{
+            die('no existe ese producto');
+        }
+        
+    }//
     function insertar(){
        if ($_POST['categoria']==''||$_POST['costo_envio']==''||$_POST['descripcion']=='' || $_POST['nombre']==''||$_POST['precio']==''||$_POST['stock']==''||!isset($_FILES)) {
             $respuesta=$respuesta=array(

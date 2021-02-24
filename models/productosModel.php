@@ -3,6 +3,20 @@ class productosModel extends Model{
     public function __construct(){
         parent::__construct();
     }//
+    public function getProducto($id){
+        try{
+            $conexion=$this->db->conexion();
+            $sql= " SELECT * FROM productos WHERE id = $id ";
+
+            $resultado = $conexion->query($sql);
+            $this->db->cerrarConexion($conexion);
+            return $resultado;
+            
+            
+        }catch (Exception $e) {
+            echo 'error:' . $e;
+        }
+    }
     public function getProductos(){
         try{
             $conexion=$this->db->conexion();
