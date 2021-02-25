@@ -18,14 +18,15 @@
                         <th>Stock</th>
                         <th>Envío</th>
                         <th>Precio</th>
-                        <th>Vendidos</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($this->productos as $producto) {?>
                     <tr>
-                        <td><?php echo $producto['img_producto'] ?></td>
+                        <td style="max-width:10rem;">
+                        <img src="<?php echo '../elPuestito/public/img/img_productos/'. $producto['img_producto'] ?>" alt="">
+                        </td>
                         <td><?php echo $producto['id'] ?></td>
                         <td><?php echo $producto['nombre_producto'] ?></td>
                         <td><?php echo $producto['categoria'] ?></td>
@@ -36,9 +37,7 @@
                         <td><?php echo $producto['stock'] ?></td>
                         <td>$<?php echo $producto['envio'] ?></td>
                         <td>$<?php echo $producto['precio'] ?></td>
-
-                        <td>Pendiente</td>
-                        <td><a href="#"><i class="fas fa-edit"></i></a><button><i class="fas fa-trash-alt"></i></button></td>
+                        <td><a href="<?php echo URL. 'productos/editarProducto/'.$producto['id'] ?>"><i class="fas fa-edit"></i></a></td>
                     </tr>
                    <?php }?>
 
@@ -53,7 +52,6 @@
                         <th>Stock</th>
                         <th>Envío</th>
                         <th>Precio</th>
-                        <th>Vendidos</th>
                         <th>Acciones</th>
                     </tr>
                 </tfoot>
