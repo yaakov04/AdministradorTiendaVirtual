@@ -13,7 +13,6 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Código</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +21,6 @@
                         <td><?php echo $categoria['id'] ?></td>
                         <td><?php echo $categoria['categoria'] ?></td>
                         <td><?php echo $categoria['nombre_categoria'] ?></td>
-                        <td><a href="#"><i class="fas fa-edit"></i></a><button><i class="fas fa-trash-alt"></i></button></td>
                     </tr>
                 <?php }?>
                 </tbody>
@@ -31,7 +29,6 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Código</th>
-                        <th>Acciones</th>
                     </tr>
                 </tfoot>
             </table>

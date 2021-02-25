@@ -204,5 +204,26 @@ class Ventas extends Controller{
             die('No se encontro el recurso');
         }
         
+    }//
+    function actualizarEstadoVenta(){
+        
+        if (isset($_POST['id_venta'])&&isset($_POST['actualizar_estatus'])) {
+            $estatus= filter_var($_POST['actualizar_estatus'], FILTER_VALIDATE_INT);
+            $id_venta=filter_var($_POST['id_venta'], FILTER_VALIDATE_INT);
+            if ($estatus&&$id_venta) {
+                $consultaDB=$this->model->actualizarEstadoVenta([
+                    'id_venta'  =>$id_venta,
+                    'estatus'   =>$estatus
+                ]);
+                if ($consultaDB == 'exito') {
+                    header('Location:'. URL.'ventas/detallesVentas/'.$id_venta);
+                }
+            }else{
+                die('No son valores validos');
+            }
+        }else{
+            die('Los campos no pueden ir vacios');
+        }
+        
     }
 }//Class

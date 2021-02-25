@@ -76,4 +76,24 @@ class ventasModel extends Model{
             return 'Error '. $e;
         }
     }//
+    public function actualizarEstadoVenta($datos){
+        try{
+            $conexion=$this->db->conexion();
+            $stmt = $conexion->prepare(" UPDATE `ventas` SET `estatus` = ? WHERE `id` = ? ");
+            $stmt->bind_param("ii", $datos['estatus'], $datos['id_venta']);
+            $stmt->execute();
+            
+            if($stmt->affected_rows > 0){
+                $respuesta='exito';
+            }else{
+                $respuesta='error';
+            }
+            $stmt->close();
+            $conexion->close();
+        }catch (Exception $e) {
+            echo 'error:' . $e;
+        }
+    
+        return $respuesta;
+    }//
 }

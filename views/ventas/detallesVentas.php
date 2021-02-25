@@ -34,7 +34,7 @@
                     <p><span class="detallesVenta__label">Total:</span> <?php echo $venta['total'] ?></p>
                 </div>
             <?php }//foreach ?>
-            <form class="form" action="">
+            <form class="form" action="<?php echo URL . 'ventas/actualizarEstadoVenta' ?>" method="post">
                 <fieldset class="form__fieldset">
                     <label class="form__label form__label--fontW-bold" for="actualizar_estatus">Actualizar Estatus</label>
                     <div class="form__row">
@@ -45,6 +45,7 @@
                             <?php }//foreach?>
                         </select>
                     </div>
+                    <input type="hidden" name="id_venta" value="<?php echo $venta['id_venta'] ?>">
                 </fieldset>
                 <button id="btn-acutalizar-estado" type="submit" class="form__submit ">Actualizar</button>
             </form>
