@@ -2,12 +2,16 @@
     document.addEventListener('DOMContentLoaded', function() {
         const btnAgregarProducto = document.querySelector('#agregar-producto') || null;
         const btnAgregarCategoria = document.querySelector('#agregar-categoria') || null;
+        const btnEditarCategoria = document.querySelector('#editar-producto') || null;
 
         if (btnAgregarProducto) {
             btnAgregarProducto.addEventListener('click', agregarProducto);
         }
         if (btnAgregarCategoria) {
             btnAgregarCategoria.addEventListener('click', agregarCategoria);
+        }
+        if (btnEditarCategoria) {
+            btnEditarCategoria.addEventListener('click', editarProducto);
         }
 
 
@@ -23,6 +27,23 @@
                 //console.log(...datos);
                 let controller = 'productos';
                 let metodo = 'insertar';
+                peticionAjax(controller, metodo, datos);
+            }
+
+        } //
+        function editarProducto(e) {
+            e.preventDefault();
+            if (camposVaciosForm2(btnEditarCategoria)) {
+                alert('campos vacios')
+            } else {
+                let valores = obtenerValoresForm(btnEditarCategoria);
+                let datos = insertandoDatosFormData(valores);
+                obteniendoDatosTextarea(datos);
+                detectandoFiles(datos);
+                datos.append('id_producto', btnEditarCategoria.getAttribute('data-id-producto'))
+                    //console.log(...datos);
+                let controller = 'productos';
+                let metodo = 'editar';
                 peticionAjax(controller, metodo, datos);
             }
 
@@ -72,8 +93,14 @@
             }
             for (a = 0; a < arreglo.length; a++) {
                 if (arreglo[a].name === '') {} else {
-                    valores['llave'].push(arreglo[a].name);
-                    valores['valor'].push(arreglo[a].value);
+                    if (arreglo[a].type == 'checkbox') {
+                        valores['llave'].push(arreglo[a].name);
+                        valores['valor'].push(arreglo[a].checked);
+                    } else {
+                        valores['llave'].push(arreglo[a].name);
+                        valores['valor'].push(arreglo[a].value);
+                    }
+
                 }
             }
             return valores;
@@ -106,6 +133,30 @@
             //console.log(inputs);
             for (i = 0; i < inputs.length; i++) {
                 if (inputs[i].id == 'btn-registrarse') {
+
+                } else {
+                    if (inputs[i].value == '') {
+                        //console.log('campo vacio');
+                        valor = true;
+                        i = inputs.length + 1;
+                    }
+                }
+            }
+
+            return valor
+        } //
+        //comprueba si hay campos vacios en un formulario
+        function camposVaciosForm2(btn) {
+            let formulario = btn.parentElement.parentElement;
+            let inputs = Array.prototype.slice.call(formulario.querySelectorAll('input'));
+            let selects = Array.prototype.slice.call(formulario.querySelectorAll('select'));
+            let textAreas = Array.prototype.slice.call(formulario.querySelectorAll('textarea'));
+            let valor = false;
+            inputs = inputs.concat(selects);
+            inputs = inputs.concat(textAreas);
+            //console.log(inputs);
+            for (i = 0; i < inputs.length; i++) {
+                if (inputs[i].id == 'btn-registrarse' || inputs[i].id == 'img' || inputs[i].id == 'enOferta') {
 
                 } else {
                     if (inputs[i].value == '') {

@@ -71,5 +71,42 @@ class productosModel extends Model{
         }
     
         return $respuesta;
-    }
-}
+    }//
+    public function actualizarWithImg($datos, $img_url){
+        $enOferta=(int) filter_var($datos['enOferta'], FILTER_VALIDATE_BOOLEAN);
+        
+        try{
+            $conexion=$this->db->conexion();
+            $stmt=$conexion->prepare(" UPDATE productos SET nombre_producto = ?, categoria = ?, img_producto = ?, precio = ?, descripcion_producto = ?, envio = ?, stock = ?, oferta = ?, editado = NOW() WHERE id = ? ");
+            $stmt->bind_param("sissssiii", $datos['nombre'], $datos['categoria'], $img_url, $datos['precio'], $datos['descripcion'], $datos['costo_envio'], $datos['stock'], $enOferta, $datos['id_producto'] );
+            $stmt->execute();
+            if ($stmt->affected_rows>0) {
+                $respuesta='exito';
+            }else{
+                $respuesta='error';
+            }
+        }catch(Exception $e){
+            $respuesta='error: '. $e;
+        }
+        return $respuesta;
+    }//
+
+    public function actualizar($datos){
+        $enOferta=(int) filter_var($datos['enOferta'], FILTER_VALIDATE_BOOLEAN);
+        
+        try{
+            $conexion=$this->db->conexion();
+            $stmt=$conexion->prepare(" UPDATE productos SET nombre_producto = ?, categoria = ?, precio = ?, descripcion_producto = ?, envio = ?, stock = ?, oferta = ?, editado = NOW() WHERE id = ? ");
+            $stmt->bind_param("sisssiii", $datos['nombre'], $datos['categoria'], $datos['precio'], $datos['descripcion'], $datos['costo_envio'], $datos['stock'], $enOferta, $datos['id_producto'] );
+            $stmt->execute();
+            if ($stmt->affected_rows>0) {
+                $respuesta='exito';
+            }else{
+                $respuesta='error';
+            }
+        }catch(Exception $e){
+            $respuesta='error: '. $e;
+        }
+        return $respuesta;
+    }//
+}//Class

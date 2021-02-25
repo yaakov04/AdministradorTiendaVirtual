@@ -18,6 +18,9 @@ function peticionAjax(controller, metodo, datos = null) {
                         case "registrarCategoria":
                             exitoRegistrarProducto(respuesta.mensaje);
                             break
+                        case "editarProducto":
+                            notificacionCorrecto(respuesta.mensaje, 100, 800);
+                            break;
 
                         default:
                             break;

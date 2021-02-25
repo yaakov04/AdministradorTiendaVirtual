@@ -53,13 +53,17 @@
 
                     </div>
                     <div class="form__row ">
+                    <label for="enOferta">En oferta</label>
+                    <input type="checkbox" name="enOferta" id="enOferta" <?php echo $producto['oferta']? 'checked':'' ?>>
+                    </div>
+                    <div class="form__row ">
 
                         <label class="form__label" for="descripcion">Descripcion del producto:</label>
                         <textarea class="form__input form__input-textArea" name="descripcion" id="descripcion " ><?php echo $producto['descripcion_producto'] ?></textarea>
 
                     </div>
                 </fieldset>
-                <button id="editar-producto" type="submit" class="form__submit ">Editar Producto</button>
+                <button id="editar-producto" data-id-producto="<?php echo $producto['id'] ?>" type="submit" class="form__submit ">Editar Producto</button>
             </form>
         </div>
         <footer>
