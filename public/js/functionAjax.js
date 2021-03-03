@@ -21,6 +21,9 @@ function peticionAjax(controller, metodo, datos = null) {
                         case "editarProducto":
                             notificacionCorrecto(respuesta.mensaje, 100, 800);
                             break;
+                        case "cambiarLeido":
+                            window.location.href = respuesta.enlace;
+                            break;
 
                         default:
                             break;

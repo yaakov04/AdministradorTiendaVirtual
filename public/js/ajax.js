@@ -3,6 +3,8 @@
         const btnAgregarProducto = document.querySelector('#agregar-producto') || null;
         const btnAgregarCategoria = document.querySelector('#agregar-categoria') || null;
         const btnEditarCategoria = document.querySelector('#editar-producto') || null;
+        const listaMensajes = document.querySelector('.lista_mensajes');
+
 
         if (btnAgregarProducto) {
             btnAgregarProducto.addEventListener('click', agregarProducto);
@@ -12,6 +14,9 @@
         }
         if (btnEditarCategoria) {
             btnEditarCategoria.addEventListener('click', editarProducto);
+        }
+        if (listaMensajes) {
+            listaMensajes.addEventListener('click', cambiarLeido)
         }
 
 
@@ -40,8 +45,8 @@
                 let datos = insertandoDatosFormData(valores);
                 obteniendoDatosTextarea(datos);
                 detectandoFiles(datos);
-                datos.append('id_producto', btnEditarCategoria.getAttribute('data-id-producto'))
-                    //console.log(...datos);
+                datos.append('id_producto', btnEditarCategoria.getAttribute('data-id-producto'));
+                //console.log(...datos);
                 let controller = 'productos';
                 let metodo = 'editar';
                 peticionAjax(controller, metodo, datos);
@@ -61,6 +66,26 @@
                 let controller = 'categorias';
                 let metodo = 'insertar';
                 peticionAjax(controller, metodo, datos);
+            }
+        }
+
+        function cambiarLeido(e) {
+            e.preventDefault();
+
+            if (e.target.getAttribute('data-link') == 'true') {
+                const enlace = e.target.href;
+                if (e.target.getAttribute('data-leido') == '0') {
+                    const id_mensaje = e.target.getAttribute('data-mensaje-id');
+                    let controller = 'buzon';
+                    let metodo = 'cambiarLeido';
+                    let datos = new FormData();
+                    datos.append('id_mensaje', id_mensaje);
+                    datos.append('enlace', enlace)
+                    peticionAjax(controller, metodo, datos);
+                } else {
+                    window.location.href = enlace;
+                }
+
             }
         }
 

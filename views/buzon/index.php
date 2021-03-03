@@ -4,38 +4,49 @@
 
     <div class="card card--width--all">
         <header>
-            <h2 class="card__header">Mensajes</h2>
+            <h2 class="card__header">Reclamos</h2>
         </header>
         <div class="card__content card__content-table">
-            <table id="table_id" class="display" style="width:100%">
+            <table id="table_id" class="display lista_mensajes" style="width:100%">
                 <thead>
                     <tr>
+                        <th>Reclamo</th>
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th>Asunto</th>
                         <th>Leido</th>
+                        <th>Resuelto</th>
                         <th>fecha</th>
                     </tr>
                 </thead>
                 <tbody>
 
+
+                    <?php foreach ($this->reclamos as $reclamo) {?>
                     <tr>
-                        <td>Juan Toledano</td>
-                        <td>tole.j@fakemail.com</td>
+                        <td><?php echo $reclamo['reclamo'] ?></td>
+                        <td><?php echo $reclamo['nombre'] ?></td>
+                        <td><?php echo $reclamo['correo'] ?></td>
                         <td>
-                            <a href="<?php echo URL ?>buzon/mensaje/1">Problema con mi producto</a>
+                            <a data-link="true" data-leido="<?php echo $reclamo['leido'] ?>" data-mensaje-id="<?php echo $reclamo['id_mensaje'] ?>" href="<?php echo URL."buzon/mensaje/".$reclamo['reclamo']."#mensaje_".$reclamo['id_mensaje']?>"><?php echo $reclamo['asunto'] ?></a>
                         </td>
-                        <td>No Leido</td>
-                        <td>11/10/2020</td>
+                        <td><?php echo $reclamo['leido']? 'Leido':'No Leido' ?></td>
+                        <td><?php echo $reclamo['resuelto']? '<i style="color:var(--verdePrimario);" class="far fa-check-circle"></i> Resuelto':'<i style="color:#e83f3f;" class="far fa-times-circle"></i> No resuelto' ?></td>
+                        <td><?php echo $reclamo['fecha'] ?></td>
                     </tr>
+                    <?php }//foreach?>
+
+                   
 
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Nombre</th>
+                    <th>Reclamo</th>
+                    <th>Nombre</th>
                         <th>Correo</th>
                         <th>Asunto</th>
                         <th>Leido</th>
+                        <th>Resuelto</th>
                         <th>fecha</th>
                     </tr>
                 </tfoot>

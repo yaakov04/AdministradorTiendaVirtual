@@ -24,7 +24,7 @@
             <div class="boxInfo boxInfo--color-blue">
                 <div class="boxInfo__content">
                     <div>
-                        <p class="boxInfo__txt">Mensajes sin leer:</p>
+                        <p class="boxInfo__txt">Reclamos sin resolver:</p>
                         <p class="boxInfo__txt boxInfo__txt-number">0</p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-envelope"></i></i>
