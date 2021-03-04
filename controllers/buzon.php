@@ -12,6 +12,15 @@ class Buzon extends Controller{
         }
         
         $this->view->render('buzon/index');
+    }//
+    function sin_resolver(){
+        $consultaDB=$this->model->getReclamosSinResolver();
+        $this->view->reclamos=array();
+        while ($resultado=$consultaDB->fetch_assoc()) {
+            array_push($this->view->reclamos, $resultado);
+        }
+        
+        $this->view->render('buzon/sin_resolver');
     }
     function mensaje($idreclamo){
         $consultaDB=$this->model->getReclamo($idreclamo[0]);

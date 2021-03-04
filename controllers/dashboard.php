@@ -8,6 +8,9 @@ class Dashboard extends Controller{
         $consultaDB=$this->model->getNEnviosPendientes();
         $resultado=$consultaDB->fetch_assoc();
         $this->view->envios_pendientes=$resultado['numero_envios_pendientes'];
+        $consultaDB=$this->model->getReclamos();
+        $resultado=$consultaDB->fetch_assoc();
+        $this->view->nReclamos=$resultado['numero_reclamos'];
         $consultaDB=$this->model->getNVentasTotales();
         $resultado=$consultaDB->fetch_assoc();
         $this->view->nTotalVentas=$resultado['numero_ventas_totales'];

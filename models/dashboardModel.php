@@ -77,5 +77,16 @@ class dashboardModel extends Model{
         }catch(Exception $e){
             return 'Error '. $e;
         }
+    }//
+    public function getReclamos(){
+        try{
+            $conexion=$this->db->conexion();
+            $sql=" SELECT count(*) as numero_reclamos FROM reclamos WHERE resuelto = 0 ";
+            $resultado=$conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch(Exception $e){
+            return 'Error '. $e;
+        }
     }
 }//Class

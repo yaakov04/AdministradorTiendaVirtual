@@ -25,13 +25,13 @@
                 <div class="boxInfo__content">
                     <div>
                         <p class="boxInfo__txt">Reclamos sin resolver:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">0</p>
+                        <p class="boxInfo__txt boxInfo__txt-number"><?php echo $this->nReclamos ?></p>
                     </div>
                     <div class="boxInfo__icon"><i class="fas fa-envelope"></i></i>
                         </i>
                     </div>
                 </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
+                <footer><a href="<?php echo URL ?>buzon/sin_resolver" class="boxInfo__footer">Más información</a></footer>
             </div>
             <!--.boxInfo-->
 
