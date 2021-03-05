@@ -24,6 +24,9 @@ function peticionAjax(controller, metodo, datos = null) {
                         case "cambiarLeido":
                             window.location.href = respuesta.enlace;
                             break;
+                        case 'responderMensaje':
+                            exitoResponderMensaje('El mensaje se envio correctamente', respuesta.reclamo);
+                            break
 
                         default:
                             break;
@@ -57,4 +60,11 @@ function exitoRegistrarProducto(mensaje) {
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = '';
     }
+} //
+
+function exitoResponderMensaje(mensaje, reclamoID) {
+    notificacionCorrecto(mensaje, 100, 800);
+    setTimeout(() => {
+        window.location.href = `http://localhost/admin-elPuestito/buzon/mensaje/${reclamoID}`;
+    }, 1400);
 }

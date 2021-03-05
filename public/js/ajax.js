@@ -4,6 +4,7 @@
         const btnAgregarCategoria = document.querySelector('#agregar-categoria') || null;
         const btnEditarCategoria = document.querySelector('#editar-producto') || null;
         const listaMensajes = document.querySelector('.lista_mensajes');
+        const btnResponderMensaje = document.querySelector('#btn-responder');
 
 
         if (btnAgregarProducto) {
@@ -17,6 +18,9 @@
         }
         if (listaMensajes) {
             listaMensajes.addEventListener('click', cambiarLeido)
+        }
+        if (btnResponderMensaje) {
+            btnResponderMensaje.addEventListener('click', responderMensaje)
         }
 
 
@@ -86,6 +90,21 @@
                     window.location.href = enlace;
                 }
 
+            }
+        } //
+        function responderMensaje(e) {
+            e.preventDefault();
+            if (camposVaciosForm(btnResponderMensaje)) {
+                alert('campos vacios')
+            } else {
+                let valores = obtenerValoresForm(btnResponderMensaje);
+                let datos = insertandoDatosFormData(valores);
+                obteniendoDatosTextarea(datos);
+
+                //console.log(...datos);
+                let controller = 'buzon';
+                let metodo = 'responderMensaje';
+                peticionAjax(controller, metodo, datos);
             }
         }
 

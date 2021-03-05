@@ -17,7 +17,9 @@
                 <p><?php echo $mensaje['correo'] ?></p>
                 <p><?php echo $mensaje['fecha'] ?></p>
                 <div class="mensaje__acciones">
-                    <a class="mensaje__enlace" href="<?php echo URL ?>buzon/nuevoMensaje">Responder</a>
+                    <a class="mensaje__enlace" href="<?php echo URL.'buzon/nuevoMensaje?respuesta_mensaje='.$mensaje['id_mensaje'].
+                    '&reclamo_id='.$mensaje['reclamo'].'&venta_id='.$mensaje['venta'].'&pedido_id='.$mensaje['pedido'].'&asunto=Re:'.
+                     $mensaje['asunto'] ?>">Responder</a>
                     <a class="mensaje__enlace" href="<?php echo URL ?>buzon">Regresar</a>
                 </div>
 

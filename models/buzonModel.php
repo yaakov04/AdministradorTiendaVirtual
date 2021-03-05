@@ -66,5 +66,37 @@ class buzonModel extends Model{
     
         return $respuesta;
     }//
+    public function hayReclamo($reclamos_id, $venta_id, $pedido_id, $respuesta_mensaje){
+        try{
+            $conexion=$this->db->conexion();
+            $sql= " SELECT id FROM `mensajes` WHERE id_reclamo = $reclamos_id AND id_venta = $venta_id AND id_pedido = $pedido_id AND id = $respuesta_mensaje ";
+            $resultado = $conexion->query($sql);
+            $conexion->close();
+            return $resultado;
+        }catch (Exception $e) {
+            echo 'error:' . $e;
+        }
+        return $resultado;
+    }//
+    public function responderMensaje($datos){
+        try{
+            $conexion=$this->db->conexion();
+            $stmt = $conexion->prepare(" INSERT INTO mensajes (id_reclamo, id_venta, id_pedido, nombre, asunto, mensaje) VALUES (?,?,?,?,?,?) ");
+            $stmt->bind_param("iiisss", $datos['id_reclamo'], $datos['id_venta'], $datos['id_pedido'], $datos['nombre'],  $datos['asunto'], $datos['mensaje']);
+            $stmt->execute();
+            
+            if($stmt->affected_rows > 0){
+                $respuesta='exito';
+            }else{
+                $respuesta='error';
+            }
+            $stmt->close();
+            $conexion->close();
+        }catch (Exception $e) {
+            echo 'error:' . $e;
+        }
+    
+        return $respuesta;
+    }//
 
 }
