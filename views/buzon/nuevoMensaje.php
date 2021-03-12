@@ -22,11 +22,11 @@
                 <input type="hidden" name="venta_id" value="<?php echo $this->datos['venta_id'] ?>">
                 <input type="hidden" name="pedido_id" value="<?php echo $this->datos['pedido_id'] ?>">
                 <input type="hidden" name="respuesta_mensaje" value="<?php echo $this->datos['respuesta_mensaje'] ?>">
-                <input type="hidden" name="asunto" value="<?php echo $this->datos['asunto'].' - Respuesta a mensaje #'.$this->datos['respuesta_mensaje'] ?>">
+                <input type="hidden" name="asunto" value="<?php echo $this->datos['asunto'] ?>">
             </fieldset>
                 
                 <button id="btn-responder" class="mensajeNuevo__btn">Enviar</button>
-                <a href="<?php echo URL ?>buzon/mensaje/1">Cancelar</a>
+                <a href="<?php echo URL.'buzon/mensaje/'. $this->datos['reclamos_id'] ?>">Cancelar</a>
             </form>
         </div>
     </div>

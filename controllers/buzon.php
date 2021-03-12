@@ -92,7 +92,8 @@ class Buzon extends Controller{
                 $respuesta=array(
                     'respuesta'=>$consultaDB,
                     'tipo'=>'responderMensaje',
-                    'reclamo'=>$reclamos_id
+                    'reclamo'=>$reclamos_id,
+                    'post'=>$_POST
                 );
                 
             }else{
