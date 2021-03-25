@@ -5,6 +5,7 @@
         const btnEditarCategoria = document.querySelector('#editar-producto') || null;
         const listaMensajes = document.querySelector('.lista_mensajes');
         const btnResponderMensaje = document.querySelector('#btn-responder');
+        const btnActualizarPerfil = document.querySelector('#actualizar-datosPerfil') || null;
 
 
         if (btnAgregarProducto) {
@@ -21,6 +22,9 @@
         }
         if (btnResponderMensaje) {
             btnResponderMensaje.addEventListener('click', responderMensaje)
+        }
+        if (btnActualizarPerfil) {
+            btnActualizarPerfil.addEventListener('click', actualizarPerfil);
         }
 
 
@@ -104,6 +108,22 @@
                 //console.log(...datos);
                 let controller = 'buzon';
                 let metodo = 'responderMensaje';
+                peticionAjax(controller, metodo, datos);
+            }
+        }
+
+        function actualizarPerfil(e) {
+            e.preventDefault();
+            if (camposVaciosForm2(btnActualizarPerfil)) {
+                alert('campos vacios')
+            } else {
+                let valores = obtenerValoresForm(btnActualizarPerfil);
+                let datos = insertandoDatosFormData(valores);
+                obteniendoDatosTextarea(datos);
+
+                //console.log(...datos);
+                let controller = 'perfil';
+                let metodo = 'actualizar';
                 peticionAjax(controller, metodo, datos);
             }
         }
@@ -200,7 +220,7 @@
             inputs = inputs.concat(textAreas);
             //console.log(inputs);
             for (i = 0; i < inputs.length; i++) {
-                if (inputs[i].id == 'btn-registrarse' || inputs[i].id == 'img' || inputs[i].id == 'enOferta') {
+                if (inputs[i].id == 'btn-registrarse' || inputs[i].id == 'img' || inputs[i].id == 'enOferta' || inputs[i].getAttribute('data-ignorar') == 'true') {
 
                 } else {
                     if (inputs[i].value == '') {

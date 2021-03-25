@@ -27,6 +27,9 @@ function peticionAjax(controller, metodo, datos = null) {
                         case 'responderMensaje':
                             exitoResponderMensaje('El mensaje se envio correctamente', respuesta.reclamo);
                             break
+                        case 'actualizarPerfil':
+                            notificacionCorrecto('Los datos se actualizaron correctamente', 100, 800);
+                            break
 
                         default:
                             break;
@@ -35,7 +38,7 @@ function peticionAjax(controller, metodo, datos = null) {
                 } else {
                     //Error
                     if (respuesta.respuesta == 'error') {
-
+                        notificacionError('Hubo un error al realizar esta accion', 100, 800)
                     }
 
                 }
