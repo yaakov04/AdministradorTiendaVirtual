@@ -35,17 +35,7 @@
             </div>
             <!--.boxInfo-->
 
-            <div class="boxInfo boxInfo--color-yellow">
-                <div class="boxInfo__content">
-                    <div>
-                        <p class="boxInfo__txt">Devoluciones:</p>
-                        <p class="boxInfo__txt boxInfo__txt-number">0</p>
-                    </div>
-                    <div class="boxInfo__icon"><i class="fas fa-undo"></i></div>
-                </div>
-                <footer><a href="#" class="boxInfo__footer">Más información</a></footer>
-            </div>
-            <!--.boxInfo-->
+           
 
 
 
