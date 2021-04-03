@@ -1,7 +1,7 @@
 # AdministradorTiendaVirtual
 Practica de administrador de tienda virtual con php
 
-<img src="#" width="400">
+<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20096%20-%20Administrador%20-%20localhost.png" width="400">
 
 Las vistas estan contruidas con HTML, CSS y Javascript; y se muestran con PHP.
 
@@ -22,6 +22,16 @@ Imagenes de muestra
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   ">
-  
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20099%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20102%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20105%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20108%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20113%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20116%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20122%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20125%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20128%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20131%20-%20Administrador%20-%20localhost.png" width="400">
+  	<img src="https://raw.githubusercontent.com/yaakov04/AdministradorTiendaVirtual/main/imagenes_muestra/FireShot%20Capture%20140%20-%20Administrador%20-%20localhost.png" width="400">
   <div>
 
