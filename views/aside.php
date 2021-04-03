@@ -1,6 +1,6 @@
 <aside class="main_container__element main_container__aside">
     <div class="admin_profile">
-        <img class="admin_profile__img" src="img/user.png" alt="imagen de perfil">
+        <img class="admin_profile__img" src="<?php echo URL ?>public/img/user.png" alt="imagen de perfil">
         <p class="admin_profile__nombre"><?php echo $_SESSION['nombre'] ?></p>
         <div>
             <a href="<?php echo URL ?>perfil" class="admin_profile__accion"><i class="fas fa-user"></i></a>
